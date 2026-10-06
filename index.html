@@ -145,6 +145,42 @@ header{z-index:1000}
 /* V38 language switcher */
 .language-switcher{display:flex;align-items:center;justify-content:center;gap:7px;margin-top:7px;padding-bottom:4px}.lang-btn{border:1px solid #333;background:#0d0d0d;color:#aaa;border-radius:999px;padding:5px 9px;font:inherit;font-size:9px;letter-spacing:.08em;cursor:pointer;transition:.2s}.lang-btn:hover,.lang-btn.active{border-color:var(--gold);color:var(--gold);background:#15130e}.lang-btn.active{box-shadow:0 0 0 1px rgba(199,167,106,.12)}
 @media(max-width:900px){.language-switcher{margin-top:8px}.lang-btn{font-size:9px;padding:5px 8px}}
+</style>
+<style id="v61-cinematic-background">
+/* V61 — stronger cinematic photographic atmosphere; photos are intentionally visible */
+:root{--cinematic-photo:url("https://images-pw.pixieset.com/elementfield/77ELZeq/photo_2026-09-20_21-48-23-996e90b3-1500.jpg")}
+html,body{background:#050505!important}
+body{position:relative;isolation:isolate;overflow-x:hidden}
+body::before{
+  content:"";position:fixed;z-index:-2;inset:-4vh -4vw;
+  background-image:var(--cinematic-photo);background-size:cover;background-position:center;
+  filter:grayscale(.08) contrast(1.06) brightness(.62) saturate(.78) blur(1.2px);
+  opacity:.30;transform:scale(1.045);pointer-events:none;
+  transition:opacity .8s ease,background-image .8s ease,background-position 1.2s ease;
+}
+body::after{
+  content:"";position:fixed;z-index:-1;inset:0;pointer-events:none;
+  background:
+    radial-gradient(ellipse at 50% 35%,rgba(0,0,0,.12) 0%,rgba(0,0,0,.30) 58%,rgba(0,0,0,.62) 100%),
+    linear-gradient(180deg,rgba(0,0,0,.34) 0%,rgba(0,0,0,.22) 45%,rgba(0,0,0,.48) 100%);
+}
+body:has(#page-about.active){--cinematic-photo:url("https://images-pw.pixieset.com/elementfield/v1XyK19/_MG_1393-2-6b185fba-1500.jpg")}
+body:has(#page-models.active),body:has(#page-portraits.active){--cinematic-photo:url("https://images-pw.pixieset.com/elementfield/VjMaE5K/DSC_0309-b81eeeab-1500.jpg")}
+body:has(#page-street.active){--cinematic-photo:url("https://images-pw.pixieset.com/elementfield/VjMaE5K/DSC_0430-eb6c2a48-1500.jpg")}
+body:has(#page-landscape.active){--cinematic-photo:url("https://images-pw.pixieset.com/elementfield/KA5lJGk/DJI_0469-ffec589c-1000.jpg")}
+body:has(#page-journal.active){--cinematic-photo:url("https://images-pw.pixieset.com/elementfield/77ELZeq/photo_2026-09-20_21-48-23-996e90b3-1500.jpg")}
+body:has(#page-reviews.active){--cinematic-photo:url("https://images-pw.pixieset.com/elementfield/lPyznr3/photo_2026-09-20_18-53-52-19109071-1500.jpg")}
+body:has(#page-reservation.active),body:has(#page-clients.active),body:has(#page-prices.active),body:has(#page-agreements.active),body:has(#page-presets.active),body:has(#page-contact.active){--cinematic-photo:url("https://images-pw.pixieset.com/elementfield/0xKkP8E/DSC_0205-399466a5-1000.jpg")}
+/* Let photography breathe through text-heavy areas instead of hiding it under solid black panels. */
+.page-head,.menu-page>.section{background:rgba(5,5,5,.12)!important}
+.menu-page .contact-card,.menu-page .agreement.full-doc,.menu-page .contact-form,.menu-page .card{background:rgba(8,8,8,.58)!important;backdrop-filter:blur(1px)}
+.menu-page .copy,.menu-page .reservation-page,.menu-page .narrow{background:transparent!important}
+.page-head{border-bottom-color:rgba(199,167,106,.18)!important}
+@media(max-width:720px){
+  body::before{opacity:.24;filter:grayscale(.10) contrast(1.04) brightness(.56) saturate(.74) blur(.8px);background-position:center top}
+  .menu-page .contact-card,.menu-page .agreement.full-doc,.menu-page .contact-form,.menu-page .card{background:rgba(8,8,8,.68)!important;backdrop-filter:none}
+}
+@media(prefers-reduced-motion:reduce){body::before{transition:none}}
 </style><style id="v54-journal">.journal-publication{width:100%}.journal-publication-photo{width:100%;display:block;max-height:620px;object-fit:cover;margin:0 0 28px;border-radius:2px}.journal-youtube-section .journal-publication-photo{aspect-ratio:16/9;object-fit:cover}</style>
 <style id="v26-home-polish-css">
 /* V26 — final HOME visual polish: editorial spacing, restrained scale, consistent rhythm */
