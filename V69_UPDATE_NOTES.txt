@@ -1,0 +1,14 @@
+VITALY BYSTROV APP v69 — CINEMATIC FINAL
+
+Updated:
+- One continuous, section-specific local background visual per app section/page.
+- 15 unique monochrome photographer-style background visuals in /backgrounds/.
+- Backgrounds are separate from publication/site photography and are not reused between sections.
+- Only one deepest background layer is used at a time; text blocks no longer have separate photo/background layers.
+- Removed visible separators/divider lines between sections/publications.
+- ABOUT: removed the two consecutive family photos requested by the owner:
+  - girl in red hat
+  - man with girl
+- Photo frames/borders were visually reduced/removed where they interrupted the background flow.
+- Lightbox second-click zoom disabled; second click/tap only keeps the image open.
+- Full original project files retained; only index.html and added background assets/notes were updated.

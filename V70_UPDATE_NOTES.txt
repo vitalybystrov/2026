@@ -1,0 +1,10 @@
+V70 LUXE FINAL — 2026-10-08
+
+- Structure and all existing publications/links preserved.
+- ABOUT: the two consecutive family photographs requested by the user are absent: red-hat girl and man-with-girl.
+- One fixed rear background layer per app section/page; content scrolls independently.
+- 15 unique dark cinematic local backgrounds, not sourced from the user's site or its publication photos.
+- TikTok section uses a dark original TikTok-logo treatment as its rear background.
+- Publication separators redesigned as restrained neon/gold/violet artistic lines; transparent publication borders removed.
+- Lightbox second-click zoom disabled.
+- Service-worker cache query bumped to v70.
