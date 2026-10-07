@@ -566,9 +566,62 @@ main,.page,.page-head,.section,.cta,.footer,.about-story,.quote-section,.current
 .tiktok-simple .tiktok-lockup{filter:drop-shadow(0 0 22px rgba(25,244,238,.18)) drop-shadow(0 0 22px rgba(254,44,85,.18))}
 .tiktok-simple .tiktok-btn{position:relative;z-index:2}
 /* The background is intentionally a single rear image layer; all content remains transparent over it. */
-body[data-v70-background="tiktok"]::before{filter:contrast(1.08) saturate(1.08);}
+body[data-v71-background="tiktok"]::before{filter:contrast(1.08) saturate(1.08);}
 @media(max-width:620px){.divider{max-width:84%;margin:14px auto!important}.section:not(:first-child):before{width:56%}.page-head:after{width:62%}}
 </style>
+
+<style id="v71-publication-clean-luxe">
+/* V71 — PUBLICATION CLEANUP: no publication-level photographic backgrounds.
+   All section atmosphere comes from the single fixed rear layer only. */
+.journal-publication,
+.journal-youtube-section,
+.journal-blog-section,
+.journal-gallery-section,
+.gallery-feature-final,
+.gallery-feature,
+.photo-block,
+.gallery-item,
+.journal-gallery-card,
+.journal-video,
+.journal-card,
+.about-photo,
+.story-photo,
+.journal-publication-photo {
+  background-image:none!important;
+}
+.journal-publication,
+.journal-youtube-section,
+.journal-blog-section,
+.journal-gallery-section,
+.gallery-feature-final,
+.gallery-feature,
+.photo-block,
+.gallery-item,
+.journal-gallery-card,
+.journal-card {
+  background-color:transparent!important;
+  border-color:transparent!important;
+  box-shadow:none!important;
+}
+/* The photograph itself remains untouched; only the decorative box behind it is removed. */
+.journal-publication-photo,
+.journal-gallery-card img,
+.about-photo img,
+.story-photo {
+  background-color:transparent!important;
+}
+/* One elegant separator between publications — never a second background panel. */
+.journal-publication + .divider,
+.journal-youtube-section + .divider,
+.journal-blog-section + .divider,
+.journal-gallery-section + .divider {
+  border:0!important;
+}
+</style>
+<style id="v71-build-marker">
+/* V71 — ELITE FINAL: generated local cinematic section backgrounds, fixed rear layer, publication backgrounds removed. */
+</style>
+
 </head>
 <body>
 <!-- V70 — LUXE CINEMATIC FINAL: fixed single rear background, unique per section, About family photos removed. -->
@@ -708,20 +761,20 @@ const mainNav=document.getElementById('mainNav');
 const menuToggle=document.getElementById('menuToggle');
 const portfolioBtn=document.getElementById('portfolioBtn');
 const infoBtn=document.getElementById('infoBtn');
-const V70_BACKGROUNDS={
+const V71_BACKGROUNDS={
   home:'backgrounds/bg_home.jpg',about:'backgrounds/bg_about.jpg',models:'backgrounds/bg_models.jpg',portraits:'backgrounds/bg_portraits.jpg',
   street:'backgrounds/bg_street.jpg',landscape:'backgrounds/bg_landscape.jpg',journal:'backgrounds/bg_journal.jpg',tiktok:'backgrounds/bg_tiktok.jpg',
   reservation:'backgrounds/bg_reservation.jpg',clients:'backgrounds/bg_clients.jpg',prices:'backgrounds/bg_prices.jpg',agreements:'backgrounds/bg_agreements.jpg',
   presets:'backgrounds/bg_presets.jpg',contact:'backgrounds/bg_contact.jpg',reviews:'backgrounds/bg_reviews.jpg'
 };
-function v70SetBackground(name){
-  const file=V70_BACKGROUNDS[name]||V70_BACKGROUNDS.home;
+function v71SetBackground(name){
+  const file=V71_BACKGROUNDS[name]||V71_BACKGROUNDS.home;
   document.body.style.setProperty('--v70-bg',`url("${file}")`);
   document.body.dataset.v70Background=name;
 }
 function showPage(name){
   if(!pages.includes(name)) name='home';
-  v70SetBackground(name);
+  v71SetBackground(name);
   document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
   const page=document.getElementById('page-'+name); if(page) page.classList.add('active');
   document.querySelectorAll('[data-page]').forEach(a=>a.classList.toggle('active',a.dataset.page===name));

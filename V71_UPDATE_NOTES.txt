@@ -1,0 +1,16 @@
+VITALY BYSTROV APP — V71 ELITE FINAL
+
+Base: V70 LUXE FINAL
+
+Final corrections:
+- Added all 15 local cinematic section backgrounds under /backgrounds.
+- Backgrounds are original locally generated artwork, not copied from the live site.
+- Exactly one unique background is assigned per section/page.
+- One fixed rear background layer remains static while page content scrolls.
+- Removed publication-level photographic background layers/boxes; publications remain structurally unchanged.
+- Kept publication content and links unchanged.
+- ABOUT family photographs requested for removal are absent: red-hat girl and man-with-girl.
+- TikTok section background uses the TikTok mark as the central visual.
+- Kept Luxe gold/violet separators and dark cinematic readability treatment.
+- No external image URL is used as a CSS background.
+- Structure/menu/publication order preserved.
