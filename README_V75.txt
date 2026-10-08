@@ -1,0 +1,1 @@
+V75 ELITE LOCKED — single-file build. Replace index.html in GitHub. No background folder and no service-worker registration required. All 15 cinematic backgrounds are embedded in index.html. Structure/publications preserved.
