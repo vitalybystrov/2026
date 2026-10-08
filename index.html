@@ -7,7 +7,7 @@
 <meta content="#088008" name="theme-color"/>
 <meta content="VITALY BYSTROV – фотограф в Тбилиси." name="description"/>
 <link href="manifest.json" rel="manifest"/>
-<title>VITALY BYSTROV — PHOTOGRAPHER TBILISI | APP v70 LUXE FINAL</title>
+<title>VITALY BYSTROV — PHOTOGRAPHER TBILISI | APP v74 ELITE FINAL</title>
 <!-- Иконка для браузера -->
 <link href="favicon.png" rel="icon" type="image/png"/>
 <link href="favicon.png" rel="apple-touch-icon" sizes="180x180"/>
@@ -561,7 +561,7 @@ main,.page,.page-head,.section,.cta,.footer,.about-story,.quote-section,.current
 body[data-v73-background="tiktok"]::before{filter:contrast(1.08) saturate(1.08);}
 @media(max-width:620px){.divider{max-width:84%;margin:14px auto!important}.section:not(:first-child):before{width:56%}.page-head:after{width:62%}}
 </style>
-<style id="v72-build-marker">/* V73 — ELITE FINAL SINGLE-FILE: 15 real local background files, fixed rear layer, publication backgrounds removed. */</style>
+<style id="v72-build-marker">/* V74 — ELITE FINAL LOCKED SINGLE-FILE: 15 real local background files, fixed rear layer, publication backgrounds removed. */</style>
 
 <style id="v73-publication-background-lock">
 /* V73 — single-file deployment: publication containers NEVER carry backgrounds. */
@@ -574,6 +574,17 @@ html,body,#app,main,.page,.page-inner,.section,.menu-page,.journal-publication,.
 /* The only photographic background is body::before. */
 body::before{z-index:0!important;position:fixed!important;inset:0!important;content:""!important;pointer-events:none!important;background-repeat:no-repeat!important;background-attachment:fixed!important;background-size:cover!important;background-position:center center!important;}
 body>header,body>main,body>footer{position:relative!important;z-index:1!important;}
+</style>
+
+<style id="v74-elite-lock">
+/* V74 — hard-lock the cinematic rear layer. No publication/page can paint a background. */
+html,body{background:#050507!important;}
+body::before{display:none!important;content:none!important;background:none!important;}
+#v74EliteBackground{position:fixed!important;inset:0!important;z-index:0!important;pointer-events:none!important;background-color:#050507!important;background-repeat:no-repeat!important;background-position:center center!important;background-size:cover!important;background-attachment:fixed!important;filter:brightness(.48) contrast(1.08) saturate(.78)!important;}
+header{position:sticky!important;z-index:100!important;}
+main,footer{position:relative!important;z-index:1!important;background:transparent!important;background-image:none!important;}
+.page,.section,.page-head,.home-hero,.hero,.cta,.photo-block,.gallery-item,.card,.contact-card,.agreement,.journal-card,.gallery-feature,.gallery-feature-final,.journal-publication,.journal-video-section,.journal-blog-section,.journal-gallery-section{background:transparent!important;background-image:none!important;box-shadow:none!important;}
+#v74BuildBadge{position:fixed;left:8px;bottom:8px;z-index:99999;font:9px/1 Inter,Arial,sans-serif;letter-spacing:.12em;color:rgba(255,255,255,.34);pointer-events:none;text-transform:uppercase;}
 </style>
 </head>
 <body>
@@ -884,7 +895,6 @@ v38ApplyLanguage(localStorage.getItem('vitalyLanguage')||'ru');
 
 /* ================= END V38 LANGUAGE SWITCHER ================= */
 route();
-if('serviceWorker' in navigator){navigator.serviceWorker.register('sw.js?v=20').catch(()=>{});}
 </script>
 <div aria-hidden="true" class="v25-lightbox" id="v25Lightbox">
 <button aria-label="Закрыть" class="v25-lightbox-close" id="v25LightboxClose">×</button>
@@ -1013,4 +1023,32 @@ window.addEventListener('appinstalled', ()=>{
 .v25-lightbox.is-zoomed img{transform:scale(1)!important;max-width:100%!important;max-height:100%!important;}
 .v25-lightbox-hint{content:"";}
 </style>
+
+<div id="v74EliteBackground" aria-hidden="true"></div>
+<script id="v74-elite-runtime">
+(function(){
+  const names=['home','about','models','portraits','street','landscape','journal','reviews','tiktok','reservation','clients','prices','agreements','presets','contact'];
+  const bg=document.getElementById('v74EliteBackground');
+  function apply(name){
+    name=names.includes(name)?name:'home';
+    if(bg && window.V73_BACKGROUNDS && window.V73_BACKGROUNDS[name]){
+      bg.style.backgroundImage='linear-gradient(180deg,rgba(0,0,0,.48),rgba(0,0,0,.70)),url("'+window.V73_BACKGROUNDS[name]+'")';
+    }
+  }
+  // Expose the existing object to window if the original script created it as a lexical const.
+  try{ if(typeof V73_BACKGROUNDS!=='undefined') window.V73_BACKGROUNDS=V73_BACKGROUNDS; }catch(e){}
+  function current(){return (location.hash||'#home').slice(1).toLowerCase();}
+  function go(){apply(current());}
+  go();
+  window.addEventListener('hashchange',go);
+  // Remove stale service workers/caches from earlier builds so an older page cannot be resurrected.
+  if('serviceWorker' in navigator){
+    navigator.serviceWorker.getRegistrations().then(rs=>Promise.all(rs.map(r=>r.unregister()))).catch(()=>{});
+    if(window.caches) caches.keys().then(keys=>Promise.all(keys.map(k=>caches.delete(k)))).catch(()=>{});
+  }
+  // One-time hard reload if an older cached document is detected.
+  const key='v74_elite_lock_loaded';
+  if(!sessionStorage.getItem(key)){sessionStorage.setItem(key,'1');setTimeout(()=>{if(!document.body.dataset.v74Reloaded){document.body.dataset.v74Reloaded='1';location.reload();}},250);}
+})();
+</script>
 </body></html>
