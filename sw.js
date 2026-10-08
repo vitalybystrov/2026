@@ -1,13 +1,3 @@
-// V75 DEPLOY FINAL — neutralizes old cached service workers.
-self.addEventListener('install', event => self.skipWaiting());
-self.addEventListener('activate', event => {
-  event.waitUntil((async () => {
-    const keys = await caches.keys();
-    await Promise.all(keys.map(k => caches.delete(k)));
-    await self.clients.claim();
-    await self.registration.unregister();
-  })());
-});
-self.addEventListener('fetch', event => {
-  event.respondWith(fetch(event.request, {cache: 'no-store'}));
-});
+self.addEventListener('install', () => self.skipWaiting());
+self.addEventListener('activate', (e) => e.waitUntil(self.clients.claim()));
+self.addEventListener('fetch', () => {});
