@@ -1,0 +1,11 @@
+V72 — ELITE FINAL
+
+- Fixed rear background implementation: the rear background is a real fixed pseudo-element above the page background and behind all content.
+- Added 15 unique local cinematic background images under backgrounds/.
+- Backgrounds are original artwork generated for this app and are not copied from vitalibystrov.mypixieset.com.
+- Each app section has its own background; no section background is reused.
+- Publication wrappers/cards are transparent; publication photographs and links remain unchanged.
+- Removed the two ABOUT family photographs from the active index.html: red-hat girl and man with girl.
+- TikTok has its own dark chromatic TikTok-style background.
+- Structure and publication content were preserved.
+- Browser/service-worker registration query updated to v72.

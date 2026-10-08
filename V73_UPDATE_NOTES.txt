@@ -1,0 +1,9 @@
+V73 — ELITE FINAL SINGLE-FILE
+
+Critical deployment fix: all 15 custom cinematic background photos are embedded directly into index.html. The rear background no longer depends on the backgrounds/ folder.
+Upload only index.html to GitHub Pages if desired.
+The custom backgrounds are not sourced from the user's website.
+Publication wrappers are transparent and have background-image:none; foreground publication photos remain unchanged.
+The rear photographic layer is body::before and is fixed during scrolling.
+ABOUT removes the red-hat girl photo and the man-with-girl photo.
+TIKTOK uses its own unique cinematic TikTok-style background.
