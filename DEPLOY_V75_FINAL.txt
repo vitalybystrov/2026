@@ -1,0 +1,1 @@
+V75 DEPLOY FINAL\nReplace index.html and sw.js in the main branch.\nDo not upload the ZIP itself.\nOpen https://vitalybystrov.github.io/2026/?v=75 after commit.\n
