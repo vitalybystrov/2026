@@ -1010,4 +1010,26 @@ window.addEventListener('appinstalled', ()=>{
 </style>
 <!-- V75: previous cache/reload runtime removed. -->
 <!-- V75-ELITE-LOCKED: 2026-10-08 -->
+
+<style id="v77-photo-frame-cleanup">
+/* V77: remove decorative black frames around existing photographs only. Keep image content and site structure unchanged. */
+.hero-photo, .full-photo, .home-main-photo, .journal-gallery-card, .journal-publication-photo,
+.gallery-grid img, .gallery-item img, .photo-block img, .about-photo img, .story-photo img,
+.story-photo-wrap img, .gallery-feature img, .gallery-feature-final img, .gallery-feature-grid img,
+.reservation-hero img, .presets-portrait {
+  border: 0 !important; outline: 0 !important; box-shadow: none !important;
+  padding: 0 !important; background: transparent !important;
+}
+.gallery-item, .photo-block, .about-photo, .story-photo-wrap, .gallery-feature,
+.gallery-feature-final, .gallery-feature-grid, .journal-gallery-card {
+  border: 0 !important; outline: 0 !important; box-shadow: none !important;
+  background: transparent !important;
+}
+.hero-photo, .full-photo, .home-main-photo, .gallery-grid img, .gallery-item img,
+.photo-block img, .about-photo img, .story-photo img, .story-photo-wrap img,
+.gallery-feature img, .gallery-feature-final img, .gallery-feature-grid img,
+.journal-gallery-card, .journal-publication-photo {
+  display: block; max-width: 100%; height: auto !important;
+}
+</style>
 </body></html>
