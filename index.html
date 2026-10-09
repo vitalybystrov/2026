@@ -585,6 +585,17 @@ main,.page,.page-head,.section,.cta,.footer,.about-story,.home-hero,.home-intro,
 .card,.contact-card,.agreement,.agreement.full-doc{background:rgba(3,3,5,.30)!important;border-color:rgba(199,167,106,.22)!important;box-shadow:0 18px 55px rgba(0,0,0,.20)!important;}
 </style>
 <meta content="V75-DEPLOY-FINAL" name="vitaly-build"/>
+
+<style id="v75-mobile-header-repair">
+/* Repair: keep the brand/menu visible while scrolling, including iOS standalone mode. */
+body>header{position:sticky!important;top:env(safe-area-inset-top,0px)!important;z-index:100000!important;display:block!important;visibility:visible!important;opacity:1!important;transform:none!important;pointer-events:auto!important;}
+body>header .nav{display:flex!important;visibility:visible!important;opacity:1!important;min-height:72px!important;align-items:center!important;justify-content:space-between!important;gap:10px!important;}
+body>header .brand-photographer{display:inline-flex!important;visibility:visible!important;opacity:1!important;align-items:center!important;flex-shrink:1!important;max-width:calc(100% - 94px)!important;}
+body>header #menuToggle{display:inline-flex!important;visibility:visible!important;opacity:1!important;position:relative!important;z-index:100001!important;flex-shrink:0!important;}
+body>header #mainNav.open{display:block!important;visibility:visible!important;opacity:1!important;z-index:100002!important;}
+@media(max-width:620px){body>header .nav{padding-left:10px!important;padding-right:10px!important;gap:8px!important;}body>header .brand-photographer{font-size:10px!important;letter-spacing:.035em!important;padding:8px 6px!important;}body>header #menuToggle{min-width:70px!important;height:38px!important;padding:6px 8px!important;font-size:10px!important;}}
+</style>
+
 </head>
 <body>
 <!-- V73 — ELITE LUXE FINAL SINGLE-FILE: fixed local rear backgrounds, publication backgrounds removed. -->
