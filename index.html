@@ -596,6 +596,17 @@ body>header #mainNav.open{display:block!important;visibility:visible!important;o
 @media(max-width:620px){body>header .nav{padding-left:10px!important;padding-right:10px!important;gap:8px!important;}body>header .brand-photographer{font-size:10px!important;letter-spacing:.035em!important;padding:8px 6px!important;}body>header #menuToggle{min-width:70px!important;height:38px!important;padding:6px 8px!important;font-size:10px!important;}}
 </style>
 
+
+<style id="v76-fixed-photo-background">
+/* V76: one fixed cinematic background from the supplied photograph; content alone scrolls. */
+html,body{background:#050507!important;background-image:none!important;}
+body{position:relative!important;isolation:isolate!important;overflow-x:hidden!important;}
+#page-home.active::before,#page-about.active::before,#page-models.active::before,#page-portraits.active::before,#page-street.active::before,#page-landscape.active::before,#page-journal.active::before,#page-reviews.active::before,#page-tiktok.active::before,#page-reservation.active::before,#page-clients.active::before,#page-prices.active::before,#page-agreements.active::before,#page-presets.active::before,#page-contact.active::before{content:""!important;display:block!important;position:fixed!important;inset:0!important;z-index:0!important;pointer-events:none!important;background-image:linear-gradient(180deg,rgba(3,3,5,.60) 0%,rgba(3,3,5,.48) 42%,rgba(3,3,5,.78) 100%),url("page-background.jpg")!important;background-repeat:no-repeat!important;background-position:center center!important;background-size:cover!important;background-attachment:fixed!important;filter:brightness(.82) contrast(1.08) saturate(.72)!important;transform:translateZ(0)!important;}
+.page.active{position:relative!important;isolation:isolate!important;}
+.page.active>*{position:relative!important;z-index:1!important;}
+body>header{position:sticky!important;top:env(safe-area-inset-top,0px)!important;z-index:100000!important;}
+@media(prefers-reduced-motion:reduce){body{scroll-behavior:auto!important;}}
+</style>
 </head>
 <body>
 <!-- V73 — ELITE LUXE FINAL SINGLE-FILE: fixed local rear backgrounds, publication backgrounds removed. -->
