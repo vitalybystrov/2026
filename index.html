@@ -607,6 +607,12 @@ body{position:relative!important;isolation:isolate!important;overflow-x:hidden!i
 body>header{position:sticky!important;top:env(safe-area-inset-top,0px)!important;z-index:100000!important;}
 @media(prefers-reduced-motion:reduce){body{scroll-behavior:auto!important;}}
 </style>
+
+<style id="v80-cinematic-home-portrait">
+/* V80: approved cinematic hero portrait. Keep all existing pages and interactions intact. */
+#page-home .home-main-photo.home-cinematic-photo{display:block!important;width:min(920px,100%)!important;max-width:920px!important;height:auto!important;max-height:none!important;aspect-ratio:auto!important;object-fit:contain!important;object-position:center!important;margin:0 auto!important;padding:0!important;border:0!important;border-radius:0!important;box-shadow:none!important;background:transparent!important;}
+@media(max-width:620px){#page-home .home-main-photo.home-cinematic-photo{width:100%!important;height:auto!important;max-height:none!important;object-fit:contain!important;background:transparent!important;}}
+</style>
 </head>
 <body>
 <!-- V73 — ELITE LUXE FINAL SINGLE-FILE: fixed local rear backgrounds, publication backgrounds removed. -->
@@ -629,7 +635,7 @@ body>header{position:sticky!important;top:env(safe-area-inset-top,0px)!important
 <section class="page active" data-home-order="site-mirror-2026-09-23" id="page-home">
 <section class="home-hero">
 <div class="home-quote">«Я фотографирую не моменты — я сохраняю эмоции.»</div>
-<img alt="VITALY BYSTROV" class="home-main-photo" src="https://images-pw.pixieset.com/elementfield/x790xlo/3333333-0583c2da-1500.jpg"/>
+<img alt="VITALY BYSTROV — кинематографичный портрет фотографа" class="home-main-photo home-cinematic-photo" src="home-hero-cinematic.png" fetchpriority="high" decoding="async"/>
 </section>
 <div class="divider"></div>
 <section class="section home-intro">
